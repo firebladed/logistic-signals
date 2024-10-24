@@ -19,7 +19,9 @@ item.place_result = entity.name;
 
 local recipe = table.deepcopy(data.raw.recipe["constant-combinator"]);
 recipe.name = entity.name;
-recipe.result = entity.name;
+recipe.results = {{ type = 'item', name = entity.name , amount = 1 }};
+
+
 
 data:extend{entity, item, recipe};
 
@@ -41,7 +43,7 @@ pcItem.place_result = playerComb.name;
 
 local pcRepice = table.deepcopy(data.raw.recipe["sil-unfulfilled-requests-combinator"]);
 pcRepice.name = playerComb.name;
-pcRepice.result = playerComb.name;
+pcRepice.results = {{ type = 'item', name = playerComb.name , amount = 1 }};
 
 data:extend{playerComb, pcItem, pcRepice};
 
